@@ -18,14 +18,13 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
-    stagefright_surface_output_msm72xx.cpp \
     QComOMXPlugin.cpp                      \
-    QComHardwareRenderer.cpp
 
 LOCAL_CFLAGS := $(PV_CFLAGS_MINUS_VISIBILITY)
 
 LOCAL_C_INCLUDES:= \
-        $(TOP)/frameworks/base/include/media/stagefright/openmax
+        $(TOP)/frameworks/native/include/media/hardware \
+        $(TOP)/frameworks/native/include/media/openmax
 
 LOCAL_SHARED_LIBRARIES :=       \
         libbinder               \
@@ -33,7 +32,6 @@ LOCAL_SHARED_LIBRARIES :=       \
         libcutils               \
         libdl                   \
         libui                   \
-        libsurfaceflinger_client\
 
 LOCAL_MODULE := libstagefrighthw
 
